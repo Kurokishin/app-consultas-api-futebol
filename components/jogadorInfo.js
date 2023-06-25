@@ -16,7 +16,8 @@ const GetPlayerInfo = ({ searchQuery }) => {
           nome: player.player_name,
           time: player.team_name,
           foto: player.player_image,
-          nacionalidade: player.player_country,
+          numero: player.player_number,
+          idade: player.player_age,
           qtdGolsMarcados: player.player_goals,
           posicao: player.player_type
         }));
@@ -47,7 +48,8 @@ const GetPlayerInfo = ({ searchQuery }) => {
           <Text>Time: {player.time}</Text>
           {player.foto && <Image source={{ uri: player.foto }} style={styles.playerImage} />}
           <Text>Posição: {player.posicao}</Text>
-          <Text>Nacionalidade: {player.nacionalidade}</Text>
+          <Text>Número da camisa: {player.numero}</Text>
+          <Text>Idade: {player.idade}</Text>
           <Text>Gols marcados: {player.qtdGolsMarcados}</Text>
         </View>
       ))}
