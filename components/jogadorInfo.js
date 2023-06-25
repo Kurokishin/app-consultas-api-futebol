@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import axios from 'axios';
 
 const GetPlayerInfo = ({ searchQuery }) => {
@@ -33,8 +33,13 @@ const GetPlayerInfo = ({ searchQuery }) => {
     }
   }, [searchQuery]);
 
+  useEffect(() => {
+    // Limpa a informação anterior após uma nova pesquisa
+    setPlayers([]);
+  }, [searchQuery]);
+
   return (
-    <View style={styles.playerInfo}>
+    <View style={styles.container}>
       {players.map(player => (
         <View key={player.nome} style={styles.playerCard}>
           <Text>Jogador</Text>
@@ -52,10 +57,10 @@ const GetPlayerInfo = ({ searchQuery }) => {
 
 export default GetPlayerInfo;
 
-const styles = {
-  playerInfo: {
+const styles = StyleSheet.create({
+  container: {
     flex: 1,
-    // Add any other styles for the player info container
+    paddingTop: 15,
   },
   playerCard: {
     backgroundColor: '#fff',
@@ -85,4 +90,4 @@ const styles = {
     marginTop: 10,
     borderRadius: 10,
   },
-};
+});
