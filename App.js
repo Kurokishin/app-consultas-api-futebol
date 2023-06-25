@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import SearchBar from './components/barraPesquisa';
 import GetPlayerInfo from './components/jogadorInfo';
 import GetTeamInfo from './components/timeInfo';
-import { StatusBar } from 'expo-status-bar';
-//import GetDateInfo from './components/DateInfo';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [showPlayerInfo, setShowPlayerInfo] = useState(false);
   const [showTeamInfo, setShowTeamInfo] = useState(false);
 
-  const handleSearch = query => {
+  const handleSearch = (query) => {
     setSearchQuery(query);
     setShowPlayerInfo(true);
     setShowTeamInfo(true);
@@ -28,27 +27,20 @@ const App = () => {
       <Text style={styles.title}>Aplicação de estatísticas esportivas</Text>
       <StatusBar style="auto" />
       <SearchBar onSearch={handleSearch} onClear={clearSearch} />
-      {showPlayerInfo && <GetPlayerInfo searchQuery={searchQuery} />}
-      {showTeamInfo && <GetTeamInfo searchQuery={searchQuery} />}
+      <ScrollView>
+        {showPlayerInfo && <GetPlayerInfo searchQuery={searchQuery} />}
+        {showTeamInfo && <GetTeamInfo searchQuery={searchQuery} />}
+      </ScrollView>
     </View>
   );
 };
 
-export default App;
-
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  content: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    paddingHorizontal: 20,
   },
   title: {
     fontSize: 24,
@@ -56,4 +48,6 @@ const styles = {
     marginTop: 20,
     marginBottom: 10,
   },
-}
+});
+
+export default App;

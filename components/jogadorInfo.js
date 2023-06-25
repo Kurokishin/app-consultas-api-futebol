@@ -41,10 +41,9 @@ const GetPlayerInfo = ({ searchQuery }) => {
 
   return (
     <View style={styles.container}>
-      {players.map(player => (
+      {players.map((player) => (
         <View key={player.nome} style={styles.playerCard}>
-          <Text>Jogador</Text>
-          <Text style={styles.playerName}>Nome: {player.nome}</Text>
+          <Text style={styles.playerName}>{player.nome}</Text>
           <Text>Time: {player.time}</Text>
           {player.foto && <Image source={{ uri: player.foto }} style={styles.playerImage} />}
           <Text>Posição: {player.posicao}</Text>
