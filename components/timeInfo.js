@@ -45,7 +45,7 @@ const GetTeamInfo = ({ searchQuery }) => {
       {teams.map(team => (
         <View key={team.team_id} style={styles.teamContainer}>
           <Text style={styles.heading}>Time</Text>
-          <Text style={styles.teamName}>Nome: {team.name}</Text>
+          <Text style={styles.teamName}>{team.name}</Text>
           {team.badge && <Image source={{ uri: team.badge }} style={styles.teamBadge} />}
           <Text style={styles.heading}>Jogadores</Text>
           {team.players.map(player => (
@@ -60,14 +60,30 @@ const GetTeamInfo = ({ searchQuery }) => {
   );
 };
 
+export default GetTeamInfo;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingHorizontal: 16,
-    // paddingTop: 16,
+    paddingTop: 15,
+    marginTop: 10,
   },
   teamContainer: {
-    marginBottom: 16,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    padding: 20,
+    borderRadius: 10,
+    marginBottom: 10,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    borderColor: '#000',
+    borderWidth: 1,
   },
   heading: {
     fontSize: 18,
@@ -95,5 +111,3 @@ const styles = StyleSheet.create({
     height: 50,
   },
 });
-
-export default GetTeamInfo;
