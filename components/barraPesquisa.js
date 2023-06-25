@@ -15,9 +15,11 @@ const SearchBar = ({ onSearch }) => {
   return (
     <View style={styles.container}>
       <TextInput
-        style={styles.barraPesquisa}
+        style={[styles.barraPesquisa, styles.placeholderText]}
         value={playerName}
         onChangeText={handleInputChange}
+        placeholder='Digite o nome do jogador ou time'
+        placeholderTextColor='#888888'
       />
       <TouchableOpacity style={styles.botao} onPress={handleSearch}>
         <Text style={styles.botaoTexto}>Pesquisar</Text>
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     marginRight: 10,
+    width: 300
   },
   botao: {
     paddingVertical: 10,
@@ -52,4 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#fff',
   },
+  placeholderText: {
+    fontSize: 17
+  }
 });
