@@ -65,12 +65,15 @@ export default GetTeamInfo;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: 15,
     marginTop: 10,
   },
   teamContainer: {
     backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 20,
     borderRadius: 10,
     marginBottom: 10,
@@ -86,27 +89,39 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   heading: {
+    alignItems: 'center',
+    justifyContent: 'center',
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
   },
   teamName: {
+    alignItems: 'center',
+    justifyContent: 'center',
     fontSize: 16,
     marginBottom: 8,
   },
   teamBadge: {
+    alignItems: 'center',
+    justifyContent: 'center',
     width: 100,
     height: 100,
     marginBottom: 8,
   },
   playerContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 8,
   },
   playerName: {
+    alignItems: 'center',
+    justifyContent: 'center',
     fontSize: 14,
     marginBottom: 4,
   },
   playerImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
     width: 50,
     height: 50,
   },
