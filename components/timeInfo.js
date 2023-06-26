@@ -32,7 +32,7 @@ const GetTeamInfo = ({ searchQuery }) => {
         console.error('Error fetching data:', error);
       }
     };
-    
+
     if (searchQuery) {
       fetchData();
     } else {
@@ -66,9 +66,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     paddingTop: 15,
     marginTop: 10,
+    justifyContent: 'flex-start', // Alteração feita aqui
   },
   teamContainer: {
     backgroundColor: '#fff',
